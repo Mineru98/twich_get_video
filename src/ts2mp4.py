@@ -6,4 +6,4 @@ for file in sorted(glob('../source/*.ts')):
     f.write("file '{}'".format(file) + "\n")
 f.close()
 
-subprocess.run(['./ffmpeg','-f','concat', '-safe', '0', '-i', 'merge.txt', '-c', 'copy', 'output.mp4'])
+subprocess.run(['./ffmpeg','-f','concat', '-safe', '0', '-i', 'merge.txt', '-c', 'copy', '-vcodec', 'h264', '-acodec', 'aac', 'output.mp4'])
